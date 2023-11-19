@@ -15,7 +15,7 @@ use App\Models\Tournament;
 class GameController extends Controller
 {
     /**
-     * Add new players
+     * Add new game
      */
     public function create(Request $request): RedirectResponse
     {

@@ -86,11 +86,10 @@
             name="player_one"
             class="mb-4"
             x-model="playerOne"
-            :disabled="playerTwo !== ''"
           >
-            <option value="">Select...</option>
+            <option value="" x-show="!playerTwo">Select...</option>
             @foreach($tournament->players as $player)
-              <option value="{{$player->id}}">{{$player->name}}</option>
+              <option x-show="!playerTwo || ({{$player->id}} == playerOne)" value="{{$player->id}}">{{$player->name}}</option>
             @endforeach
           </select>
           
